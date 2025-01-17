@@ -1,0 +1,21 @@
+{
+  "name": "gamestore",
+  "version": "1.0.0",
+  "description": "GameStore, Crud DTOs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhinxCode/GameStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PhinxCode/GameStore/issues"
+  },
+  "homepage": "https://github.com/PhinxCode/GameStore#readme"
+}
