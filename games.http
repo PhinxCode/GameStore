@@ -1,2 +1,21 @@
 
-GET http://localhost:5091
+# GET http://localhost:5091/
+
+GET http://localhost:5091/games
+
+###
+GET http://localhost:5091/games/52
+
+###
+POST http://localhost:5091/games
+Content-Type: application/json
+
+{
+    "id": 17,
+    "name": "Halo Infinite",
+    "genre": "First-Person Shooter",
+    "price": 59.99,
+    "description": "The latest installment in the Halo franchise, featuring Master Chief's return in an epic sci-fi adventure.",
+    "releaseDate": "2021-12-08"
+}
+

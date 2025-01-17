@@ -3,9 +3,11 @@ using GameStore.Api.Dtos;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+const string GetGameEndPointName = "GetGame";
+
 // 1- Declarar nuestra lista
-List<GameDto> game =
-[
+List<GameDto> games = new List<GameDto>
+{
     new GameDto(
         1,
         "The Witcher 3: Wild Hunt",
@@ -126,8 +128,35 @@ List<GameDto> game =
         "A life simulation game where you build and customize your island with friends.",
         new DateOnly(2020, 3, 20)
     ),
-];
+};
 
-app.MapGet("/", () => "Hello World!");
+// "games" <-- name path , games <-- lista de juegos
+//GET /games
+app.MapGet("games", () => games);
+
+// Recuperar los juegos GET /games/1
+app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id))
+    .WithName(GetGameEndPointName);
+
+//
+// POST /games
+//Se espera recibir un objeto CreateDto
+app.MapPost(
+    "games",
+    (CreateGameDto newGame) =>
+    {
+        GameDto game = new(
+            games.Count + 1,
+            newGame.Name,
+            newGame.Genre,
+            newGame.Price,
+            newGame.Description,
+            newGame.ReleaseDate
+        );
+
+        games.Add(game);
+        return Results.CreatedAtRoute(GetGameEndPointName, new { id = game.Id });
+    }
+);
 
 app.Run();

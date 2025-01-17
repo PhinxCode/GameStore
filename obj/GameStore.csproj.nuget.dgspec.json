@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj": {}
+    "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj": {}
   },
   "projects": {
-    "c:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj": {
+    "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj",
+        "projectUniqueName": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj",
         "projectName": "GameStore",
-        "projectPath": "c:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj",
+        "projectPath": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj",
         "packagesPath": "C:\\Users\\codep\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\obj\\",
+        "outputPath": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
