@@ -1,2 +1,2 @@
-# GameStore
+# GameStore Dtos
 GameStore, Crud DTOs
