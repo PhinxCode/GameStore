@@ -132,7 +132,16 @@ List<GameDto> games = new List<GameDto>
 
 // "games" <-- name path , games <-- lista de juegos
 //GET /games
-app.MapGet("games", () => games);
+app.MapGet(
+    "games",
+    () =>
+    {
+        if (games.Count == 0)
+            return Results.NotFound("No games found.");
+
+        return Results.Ok(games);
+    }
+);
 
 // Recuperar los juegos GET /games/1
 app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id))

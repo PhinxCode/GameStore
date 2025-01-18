@@ -30,5 +30,5 @@ Content-Type: application/json
     "price": 7.00,
     "description": "A sandbox game where you can create and explore worlds made of blocks.",
     "releaseDate": "2011-11-18"
-  },
+  }
 
