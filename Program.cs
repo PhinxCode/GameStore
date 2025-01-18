@@ -159,4 +159,32 @@ app.MapPost(
     }
 );
 
+// PUT /games   //Actualizar
+app.MapPut(
+    "/games/{id}",
+    (int id, UpdateGameDto updateGameDto) =>
+    {
+        // Buscar el índice del juego con el id especificado
+        var index = games.FindIndex(game => game.Id == id);
+
+        // Si no se encuentra el juego, devolver un 404
+        if (index == -1)
+            return Results.NotFound();
+
+        // Si se encuentra, actualizar el juego en la lista
+        games[index] = new GameDto(
+            id,
+            updateGameDto.Name,
+            updateGameDto.Genre,
+            updateGameDto.Price,
+            updateGameDto.Description,
+            updateGameDto.ReleaseDate
+        );
+
+        // Devolver una respuesta de éxito
+
+        return Results.NoContent();
+    }
+);
+
 app.Run();
