@@ -131,26 +131,28 @@ public static class GamesEndpoints
         ),
     ];
 
-    public static WebApplication MapGamesEndPoints(this WebApplication app)
+    public static RouteGroupBuilder MapGamesEndPoints(this WebApplication app)
     {
+        var group = app.MapGroup("/");
         // 1- Declarar nuestra lista
 
         // "games" <-- name path , games <-- lista de juegos
         //GET /games
-        app.MapGet(
+        group.MapGet(
             "games",
             () => games.Count == 0 ? Results.NotFound("No games found.") : Results.Ok(games)
         );
 
         // Recuperar los juegos GET /games/1
-        app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id))
+        group
+            .MapGet("/{id}", (int id) => games.Find(game => game.Id == id))
             .WithName(GetGameEndPointName);
 
         //
         // POST /games
         //Se espera recibir un objeto CreateDto
-        app.MapPost(
-            "games",
+        group.MapPost(
+            "/",
             (CreateGameDto newGame) =>
             {
                 GameDto game = new(
@@ -168,8 +170,8 @@ public static class GamesEndpoints
         );
 
         // PUT /games   //Actualizar
-        app.MapPut(
-            "/games/{id}",
+        group.MapPut(
+            "/{id}",
             (int id, UpdateGameDto updateGameDto) =>
             {
                 // Buscar el índice del juego con el id especificado
@@ -197,7 +199,7 @@ public static class GamesEndpoints
 
         // DELETE /games/1
 
-        app.MapDelete(
+        group.MapDelete(
             "games/{id}",
             (int id) =>
             {
@@ -214,6 +216,6 @@ public static class GamesEndpoints
             }
         );
 
-        return app;
+        return group;
     }
 }
