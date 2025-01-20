@@ -110,9 +110,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj",
-      "projectName": "GameStore",
-      "projectPath": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.csproj",
+      "projectUniqueName": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.Api.csproj",
+      "projectName": "GameStore.Api",
+      "projectPath": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\GameStore.Api.csproj",
       "packagesPath": "C:\\Users\\codep\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\codep\\OneDrive\\Documentos\\GitProjects\\GameStore\\obj\\",
       "projectStyle": "PackageReference",
