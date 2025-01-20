@@ -134,7 +134,7 @@ public static class GamesEndpoints
     public static RouteGroupBuilder MapGamesEndPoints(this WebApplication app)
     {
         //agrupar game en totalidad para no repetir el endpoint
-        var group = app.MapGroup("games");
+        var group = app.MapGroup("games").WithParameterValidation();
         // 1- Declarar nuestra lista
 
         // "games" <-- name path , games <-- lista de juegos
@@ -146,16 +146,13 @@ public static class GamesEndpoints
 
         // Recuperar los juegos GET /games/1
         group
-            .MapGet(
-                "/{id}",
-                (int id) =>
-                {
-                    var game = games.Find(game => game.Id == id);
-                    return game is not null
-                        ? Results.Ok(game)
-                        : Results.NotFound("Games not found.");
-                }
-            )
+            .MapGet("/{id}", (int id) => {
+
+               var game =  games.Find(game => game.Id == id);  
+              return  game is not null ? Results.Ok(game) : Results.NotFound("Games not found."); 
+
+            })
+            
             .WithName(GetGameEndPointName);
 
         //Se espera recibir un objeto CreateDto

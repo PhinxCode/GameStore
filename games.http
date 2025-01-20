@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "id": 17,
-    "name": "Halo Infinite",
+    # "name": "Halo Infinite",
     "genre": "First-Person Shooter",
     "price": 59.99,
     "description": "The latest installment in the Halo franchise, featuring Master Chief's return in an epic sci-fi adventure.",
